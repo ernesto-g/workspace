@@ -32,7 +32,7 @@
 PROJECT_NAME := blinky
 
 PROJECT_MODULES := modules/$(TARGET)/base \
-                   modules/$(TARGET)/board/edu_ciaa_nxp \
+                   modules/$(TARGET)/board/$(BOARD) \
                    modules/$(TARGET)/chip
 
 PROJECT_PATH := examples/$(PROJECT_NAME)

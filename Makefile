@@ -33,13 +33,13 @@
 
 PROJECT ?= examples/blinky
 TARGET ?= lpc4337_m4
-BOARD ?= edu_ciaa_nxp
+BOARD ?= board_ciaa_edu_4337
 
 include $(PROJECT)/Makefile
 
 include etc/target/$(TARGET).mk
 
-SYMBOLS += -D$(TARGET) -D$(BOARD)
+SYMBOLS += -D$(TARGET) -D$(BOARD) -std=c99
 
 include $(foreach MOD,$(PROJECT_MODULES),$(MOD)/Makefile)
 

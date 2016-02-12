@@ -30,13 +30,13 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 
-$(BOARD)_PATH := modules/lpc4337_m4/board/$(BOARD)
+ponchos_PATH := modules/lpc4337_m4/board/$(BOARD)/ponchos
 
-$(BOARD)_SRC_FILES := $(wildcard $($(BOARD)_PATH)/src/*.c) \
-                   $(wildcard $($(BOARD)_PATH)/src/*.S)
+ponchos_SRC_FILES := $(wildcard $(ponchos_PATH)/src/*.c) \
+                   $(wildcard $(ponchos_PATH)/src/*.S)
 
-$(BOARD)_INC_FOLDERS := $($(BOARD)_PATH)/inc
+ponchos_INC_FOLDERS := $(ponchos_PATH)/inc
 
-$(BOARD)_SRC_FOLDERS := $($(BOARD)_PATH)/src
+ponchos_SRC_FOLDERS := $($(ponchos_PATH)/src
 
 

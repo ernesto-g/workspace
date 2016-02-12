@@ -33,10 +33,11 @@
 $(BOARD)_PATH := modules/lpc4337_m4/board/$(BOARD)
 
 $(BOARD)_SRC_FILES := $(wildcard $($(BOARD)_PATH)/src/*.c) \
-                   $(wildcard $($(BOARD)_PATH)/src/*.S)
+                   $(wildcard $($(BOARD)_PATH)/src/*.S) \
+		   $(wildcard $($(BOARD)_PATH)/ponchos/src/*.c)
 
-$(BOARD)_INC_FOLDERS := $($(BOARD)_PATH)/inc
+$(BOARD)_INC_FOLDERS := $($(BOARD)_PATH)/inc $($(BOARD)_PATH)/ponchos/inc
 
-$(BOARD)_SRC_FOLDERS := $($(BOARD)_PATH)/src
+$(BOARD)_SRC_FOLDERS := $($(BOARD)_PATH)/src $($(BOARD)_PATH)/ponchos/src
 
 
