@@ -52,6 +52,7 @@ PROJECT_OBJS := $(notdir $(PROJECT_OBJ_FILES))
 INCLUDES := $(addprefix -I,$(PROJECT_INC_FOLDERS)) \
             $(addprefix -I,$(foreach MOD,$(notdir $(PROJECT_MODULES)),$($(MOD)_INC_FOLDERS)))
 
+
 vpath %.o $(OBJ_PATH)
 vpath %.c $(PROJECT_SRC_FOLDERS) $(foreach MOD,$(notdir $(PROJECT_MODULES)),$($(MOD)_SRC_FOLDERS))
 vpath %.S $(PROJECT_SRC_FOLDERS) $(foreach MOD,$(notdir $(PROJECT_MODULES)),$($(MOD)_SRC_FOLDERS))
@@ -70,6 +71,12 @@ $(foreach MOD,$(notdir $(PROJECT_MODULES)), $(eval $(call makemod,$(MOD),$(notdi
 
 %.o: %.c
 	@echo "*** compiling C file $< ***"
+	#@echo "debug1" $(INCLUDES)
+	#@echo "debug2" $(PROJECT_MODULES)
+	#@echo "debug3" $(foreach MOD,$(notdir $(PROJECT_MODULES)),$(MOD) )
+	#@echo "debug4" $(foreach MOD,$(notdir $(PROJECT_MODULES)),$($(MOD)_INC_FOLDERS))
+	#@echo "debug5" $(foreach MOD,$(notdir $(PROJECT_MODULES)),$(educiaanxp_INC_FOLDERS) )
+
 	@$(CROSS_PREFIX)gcc $(SYMBOLS) $(CFLAGS) $(INCLUDES) -c $< -o $(OBJ_PATH)/$@
 	@$(CROSS_PREFIX)gcc $(SYMBOLS) $(CFLAGS) $(INCLUDES) -c $< -MM > $(OBJ_PATH)/$(@:.o=.d)
 

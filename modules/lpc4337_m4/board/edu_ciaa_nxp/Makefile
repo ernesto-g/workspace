@@ -29,17 +29,14 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-PROJECT_NAME := blinky
 
-PROJECT_MODULES := modules/$(TARGET)/base \
-                   modules/$(TARGET)/board/edu_ciaa_nxp \
-                   modules/$(TARGET)/chip
+edu_ciaa_nxp_PATH := modules/lpc4337_m4/board/edu_ciaa_nxp
 
-PROJECT_PATH := examples/$(PROJECT_NAME)
+edu_ciaa_nxp_SRC_FILES := $(wildcard $(edu_ciaa_nxp_PATH)/src/*.c) \
+                   $(wildcard $(edu_ciaa_nxp_PATH)/src/*.S)
 
-PROJECT_SRC_FOLDERS := $(PROJECT_PATH)/src
+edu_ciaa_nxp_INC_FOLDERS := $(edu_ciaa_nxp_PATH)/inc
 
-PROJECT_INC_FOLDERS := $(PROJECT_PATH)/inc
+edu_ciaa_nxp_SRC_FOLDERS := $(edu_ciaa_nxp_PATH)/src
 
-PROJECT_C_FILES   := $(wildcard $(PROJECT_PATH)/src/*.c)
-PROJECT_ASM_FILES := $(wildcard $(PROJECT_PATH)/src/*.S)
+
