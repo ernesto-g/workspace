@@ -1,3 +1,4 @@
+# Copyright 2016, Ernesto Gigliotti <ernestogigliotti@gmail.com>
 # Copyright 2016, Pablo Ridolfi
 # All rights reserved.
 #
@@ -35,7 +36,7 @@ PROJECT_NAME := usb_cdc
 # Modules needed by the application
 PROJECT_MODULES := modules/$(TARGET)/freertos \
                    modules/$(TARGET)/base \
-                   modules/$(TARGET)/board \
+                   modules/$(TARGET)/board/$(BOARD) \
                    modules/$(TARGET)/chip
 
 # application relative path

@@ -1,4 +1,5 @@
 /*
+ * Copyright(C) Ernesto Gigliotti <ernestogigliotti@gmail.com>, 2016
  * Copyright(C) NXP Semiconductors, 2012
  * All rights reserved.
  *
@@ -27,7 +28,7 @@
 #include "board.h"
 #include "string.h"
 
-/** @ingroup BOARD_NGX_XPLORER_18304330
+/** @ingroup BOARD_EDU_CIAA_NXP
  * @{
  */
 

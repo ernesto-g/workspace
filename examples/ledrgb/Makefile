@@ -1,3 +1,4 @@
+# Copyright 2016, Ernesto Gigliotti <ernestogigliotti@gmail.com>
 # Copyright 2016, Pablo Ridolfi
 # All rights reserved.
 #

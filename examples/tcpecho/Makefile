@@ -1,3 +1,4 @@
+# Copyright 2016, Ernesto Gigliotti <ernestogigliotti@gmail.com>
 # Copyright 2015, Pablo Ridolfi
 # All rights reserved.
 #
@@ -36,7 +37,7 @@ PROJECT_NAME := tcpecho
 PROJECT_MODULES := modules/$(TARGET)/lwip \
                    modules/$(TARGET)/freertos \
                    modules/$(TARGET)/base \
-		           modules/$(TARGET)/board \
+		           modules/$(TARGET)/board/$(BOARD) \
                    modules/$(TARGET)/chip
 
 # application relative path

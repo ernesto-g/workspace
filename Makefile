@@ -29,11 +29,17 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
+# Posible boards:
+# - ngx_xplorer_4330
+# - edu_ciaa_nxp_full
+
+
 -include project.mk
 
 PROJECT ?= examples/ledrgb
 TARGET ?= lpc4337_m4
 BOARD ?= edu_ciaa_nxp_full
+
 
 include $(PROJECT)/Makefile
 
@@ -71,11 +77,11 @@ $(foreach MOD,$(notdir $(PROJECT_MODULES)), $(eval $(call makemod,$(MOD),$(notdi
 
 %.o: %.c
 	@echo "*** compiling C file $< ***"
-	#@echo "debug1" $(INCLUDES)
-	#@echo "debug2" $(PROJECT_MODULES)
-	#@echo "debug3" $(foreach MOD,$(notdir $(PROJECT_MODULES)),$(MOD) )
-	#@echo "debug4" $(foreach MOD,$(notdir $(PROJECT_MODULES)),$($(MOD)_INC_FOLDERS))
-	#@echo "debug5" $(foreach MOD,$(notdir $(PROJECT_MODULES)),$(educiaanxp_INC_FOLDERS) )
+#	@echo "debug1" $(INCLUDES)
+#	@echo "debug2" $(PROJECT_MODULES)
+#	@echo "debug3" $(foreach MOD,$(notdir $(PROJECT_MODULES)),$(MOD) )
+#	@echo "debug4" $(foreach MOD,$(notdir $(PROJECT_MODULES)),$($(MOD)_INC_FOLDERS))
+#	@echo "debug5" $(foreach MOD,$(notdir $(PROJECT_MODULES)),$(educiaanxp_INC_FOLDERS) )
 
 	@$(CROSS_PREFIX)gcc $(SYMBOLS) $(CFLAGS) $(INCLUDES) -c $< -o $(OBJ_PATH)/$@
 	@$(CROSS_PREFIX)gcc $(SYMBOLS) $(CFLAGS) $(INCLUDES) -c $< -MM > $(OBJ_PATH)/$(@:.o=.d)

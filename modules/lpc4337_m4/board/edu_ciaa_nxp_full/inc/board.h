@@ -1,7 +1,8 @@
 /*
- * @brief NGX Xplorer 4330 board file
+ * @brief EDUCIAA-NXP board file
  *
  * @note
+ * Copyright(C) Ernesto Gigliotti <ernestogigliotti@gmail.com>, 2016
  * Copyright(C) NXP Semiconductors, 2013
  * All rights reserved.
  *

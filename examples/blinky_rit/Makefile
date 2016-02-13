@@ -1,3 +1,4 @@
+# Copyright 2016, Ernesto Gigliotti <ernestogigliotti@gmail.com>
 # Copyright 2016, Pablo Ridolfi
 # All rights reserved.
 #
@@ -32,7 +33,7 @@
 PROJECT_NAME := blinky_rit
 
 PROJECT_MODULES := modules/$(TARGET)/base \
-                   modules/$(TARGET)/board \
+                   modules/$(TARGET)/board/$(BOARD) \
                    modules/$(TARGET)/chip
 
 PROJECT_PATH := examples/$(PROJECT_NAME)
