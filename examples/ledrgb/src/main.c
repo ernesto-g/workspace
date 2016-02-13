@@ -89,17 +89,38 @@ static void pausems(uint32_t t)
 void SysTick_Handler(void)
 {
 	if(pausems_count > 0) pausems_count--;
+
+	Board_LED_PWM_tick_ms();
 }
 
 
 int main(void)
 {
 	initHardware();
+	int pwmValue=0;
 
 	while (1)
 	{
-		Board_LED_Toggle(LED);
-		pausems(DELAY_MS);
+		//Board_LED_Toggle(LED);
+		//pausems(DELAY_MS);
+		//Board_UARTPutSTR("Toggle!\r\n");
+
+		for(pwmValue=0; pwmValue<16; pwmValue++)
+		{
+			Board_LED_PWM_SetValue(0,pwmValue);
+			pausems(100);
+		}
+                for(pwmValue=0; pwmValue<16; pwmValue++)
+                {
+                        Board_LED_PWM_SetValue(1,pwmValue);
+			pausems(100);
+                }
+                for(pwmValue=0; pwmValue<16; pwmValue++)
+                {
+                        Board_LED_PWM_SetValue(2,pwmValue);
+			pausems(100);
+                }
+
 	}
 
 }

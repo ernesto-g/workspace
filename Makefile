@@ -31,9 +31,9 @@
 
 -include project.mk
 
-PROJECT ?= examples/blinky
+PROJECT ?= examples/ledrgb
 TARGET ?= lpc4337_m4
-BOARD ?= board_ciaa_edu_4337
+BOARD ?= edu_ciaa_nxp_full
 
 include $(PROJECT)/Makefile
 
