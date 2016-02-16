@@ -46,6 +46,6 @@ TARGET = lpc4337_m4
 #TARGET = lpc1769
 
 # current board (optional)
-BOARD = edu_ciaa_nxp
+BOARD = edu_ciaa_nxp_full
 #BOARD = ciaa_nxp
 #BOARD = lpcxpresso1769
